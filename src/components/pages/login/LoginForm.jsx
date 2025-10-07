@@ -7,15 +7,16 @@ function LoginForm() {
 		setName(e.target.value);
 	};
 
-	const handleClick = () => {
-		if (name) {
-			alert(`Bonjour ${name}`);
-		}
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		alert(`Bonjour ${name}`);
+		setName("");
 	};
 
 	return (
-		<form>
+		<form action="submit" onSubmit={handleSubmit}>
 			<h1>Bienvenue chez nous !</h1>
+			<br />
 			<h2>Connectez-vous</h2>
 			<input
 				type="text"
@@ -24,11 +25,7 @@ function LoginForm() {
 				required
 				value={name}
 			/>
-			<input
-				type="submit"
-				value="Accédez à votre espace"
-				onClick={handleClick}
-			/>
+			<button type="submit">Accédez à votre espace</button>
 		</form>
 	);
 }
