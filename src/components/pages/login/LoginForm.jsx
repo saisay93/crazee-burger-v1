@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function LoginForm() {
 	const [name, setName] = useState("");
@@ -9,7 +10,6 @@ function LoginForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		alert(`Bonjour ${name}`);
 		setName("");
 	};
 
@@ -25,7 +25,9 @@ function LoginForm() {
 				required
 				value={name}
 			/>
-			<button type="submit">Accédez à votre espace</button>
+			<NavLink to={`/order/${name}`}>
+				<button type="submit">Accédez à votre espace</button>
+			</NavLink>
 		</form>
 	);
 }
