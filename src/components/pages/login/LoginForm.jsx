@@ -22,12 +22,12 @@ function LoginForm() {
 			<h2>Connectez-vous</h2>
 			<input
 				type="text"
-				placeholder="Entrez votre prénom..."
+				placeholder="Entrez votre prénom"
 				onChange={handelChange}
 				required
 				value={inputValue}
 			/>
-			<button type="submit">Accédez à votre espace</button>
+			<button type="submit">Accéder à mon espace</button>
 		</form>
 	);
 }
