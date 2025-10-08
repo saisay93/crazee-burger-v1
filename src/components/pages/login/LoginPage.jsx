@@ -1,9 +1,15 @@
 import LoginForm from "./LoginForm";
-
+import Logo from "../../shared/Logo";
 
 function LoginPage() {
-  return <LoginForm />;
-  
+	return (
+		<>
+			<Logo />
+			<LoginForm />
+		</>
+	);
 }
 
-export default LoginPage
+export default LoginPage;
+
+
