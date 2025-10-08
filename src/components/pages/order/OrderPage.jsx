@@ -1,13 +1,13 @@
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 function OrderPage() {
-	const { name } = useParams();
+	const { username } = useParams();
 
 	return (
 		<>
-			<h1>Bonjour {name}</h1>
-			<NavLink to="/">
+			<h1>Bonjour {username}</h1>
+			<Link to="/">
 				<button type="button">Déconnexion</button>
-			</NavLink>
+			</Link>
 		</>
 	);
 }
