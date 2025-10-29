@@ -1,15 +1,23 @@
-import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
+import NavBar from "./NavBar/NavBar";
+import Main from "./Main/Main";
+
 function OrderPage() {
-	const { username } = useParams();
+	
 
 	return (
-		<>
-			<h1>Bonjour {username}</h1>
-			<Link to="/">
-				<button type="button">Déconnexion</button>
-			</Link>
-		</>
+		<OrderPageStyled>
+			<NavBar />
+			<Main />
+		</OrderPageStyled>
 	);
 }
 
 export default OrderPage;
+
+const OrderPageStyled = styled.div`
+  background-color: #FF9F1A;
+  height: 100vh;
+  padding: 24px 56px;
+ 
+`;
