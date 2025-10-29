@@ -5,7 +5,7 @@ import { theme } from "../../../styles/theme";
 import InputText from "../../shared/InputText";
 import { BsPersonCircle } from "react-icons/bs";
 import PrimaryButton from "../../shared/PrimaryButton";
-import { FaChevronRight } from "react-icons/fa";
+import { IoChevronForward } from 'react-icons/io5';
 function LoginForm() {
 	const [inputValue, setInputValue] = useState("");
 	const navigate = useNavigate();
@@ -34,7 +34,7 @@ function LoginForm() {
 			/>
 			<PrimaryButton
 				label="Accéder à mon espace"
-				Icon={<FaChevronRight className="user-icon" />}
+				Icon={<IoChevronForward className="chevron" />}
 			/>
 		</LoginFormStyled>
 	);
@@ -43,30 +43,31 @@ function LoginForm() {
 export default LoginForm;
 
 const LoginFormStyled = styled.form`
-  max-width: 500px;
-  min-width: 40px;
-  padding: 2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 2.5rem 2rem;
+  text-align: center; 
   font-family: Amatic SC, cursive;
 
   h1{
-	font-size: ${theme.fonts.P5};
+	font-size: ${theme.fonts.size.P5};
 	color: ${theme.colors.white};
 	margin-top: 2rem;
   }
 
   h2{
-	font-size: ${theme.fonts.P4};
+	font-size: ${theme.fonts.size.P4};
 	color: ${theme.colors.white};
   }
 
   hr{
 	width: 400px;
-	border: 1.5px solid ${theme.colors.primary_burger};
+	border: 1.5px solid #F56a2c;
 	margin: 2rem 0 2.5rem;
 
+  }
+
+  .chevron{
+    width: 15px;
+	height: 15px;
+    margin-left: 10px;
   }
 `;
