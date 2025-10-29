@@ -1,16 +1,11 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
+import { theme } from "../../theme";
 
-function InputText({ inputValue, handelChange, Icon, ...extraProps }) {
+function InputText({ value, onChange, Icon, ...extraProps }) {
 	return (
 		<InputTextStyled>
 			{Icon && Icon}
-			<input
-				type="text"
-				onChange={handelChange}
-				value={inputValue}
-				{...extraProps}
-			/>
+			<input value={value} onChange={onChange} type="text" {...extraProps} />
 		</InputTextStyled>
 	);
 }
@@ -22,32 +17,28 @@ const InputTextStyled = styled.div`
   border-radius: ${theme.borderRadius.round};
   display: flex;
   align-items: center;
-  width: 100%;
   padding: 18px 24px;
   margin: 18px 0;
   gap: 15px;
 
-  input{
-    width: 90%;
+  input {
     border: none;
-    font-size: ${theme.fonts.P0};
-    color: ${theme.colors.greyDark};
+    font-size: ${theme.fonts.size.P0};
+    color: ${theme.colors.dark};
+    width: 100%;
 
-    &::placeholder{
-    background: ${theme.colors.white};  
-    color: ${theme.colors.greyMedium};
-  }
-
-    &:focus{
-      outline: none;
+    &::placeholder {
+      color: ${theme.colors.greyMedium};
     }
 
+    /* &:focus{
+      outline: none;
+    } */
   }
 
   .user-icon {
-	  color: ${theme.colors.greyDark};
-	  width: 15px;
-	  height: 15px;
+    color: ${theme.colors.greySemiDark};
+    width: 15px;
+    height: 15px;
   }
-
-  `;
+`;
