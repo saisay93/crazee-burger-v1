@@ -6,7 +6,7 @@ import backgroung from "/public/images/burger-background.jpg";
 function LoginPage() {
 	return (
 		<LoginPageStyled>
-			<Logo className="logo-login-page"/>
+			<Logo className="logo-login-page" />
 			<LoginForm />
 		</LoginPageStyled>
 	);
@@ -20,12 +20,12 @@ const LoginPageStyled = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${backgroung});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${backgroung});
   background-size: cover;
   background-position: center;
 
-  .logo-login-page{
+  .logo-login-page {
     transform: scale(2.5);
   }
-
 `;
