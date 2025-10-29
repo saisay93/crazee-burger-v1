@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
+import { theme } from "../../../theme";
+import InputText from "../../shared/InputText";
+import { BsPersonCircle } from "react-icons/bs";
+import PrimaryButton from "../../shared/PrimaryButton";
+import { IoChevronForward } from "react-icons/io5";
 function LoginForm() {
 	const [inputValue, setInputValue] = useState("");
 	const navigate = useNavigate();
@@ -16,20 +21,50 @@ function LoginForm() {
 	};
 
 	return (
-		<form action="submit" onSubmit={handleSubmit}>
+		<LoginFormStyled action="submit" onSubmit={handleSubmit}>
 			<h1>Bienvenue chez nous !</h1>
-			<br />
+			<hr />
 			<h2>Connectez-vous</h2>
-			<input
-				type="text"
-				placeholder="Entrez votre prénom..."
-				onChange={handelChange}
-				required
+			<InputText
 				value={inputValue}
+				onChange={handelChange}
+				placeholder="Entrez votre prénom"
+				Icon={<BsPersonCircle className="user-icon" />}
+				required
 			/>
-			<button type="submit">Accédez à votre espace</button>
-		</form>
+			<PrimaryButton
+				label="Accéder à mon espace"
+				Icon={<IoChevronForward className="chevron" />}
+			/>
+		</LoginFormStyled>
 	);
 }
 
 export default LoginForm;
+
+const LoginFormStyled = styled.form`
+  padding: 2.5rem 2rem;
+  text-align: center;
+  font-family: Amatic SC, cursive;
+
+  h1 {
+    font-size: ${theme.fonts.size.P5};
+    color: ${theme.colors.white};
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: ${theme.fonts.size.P4};
+    color: ${theme.colors.white};
+  }
+
+  hr {
+    width: 400px;
+    border: 1.5px solid #f56a2c;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .chevron {
+    margin-left: 10px;
+  }
+`;
