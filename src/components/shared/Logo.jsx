@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
+import logo from '../../assets/images/logo-orange.png';
 
 function Logo({ className }) {
 	return (
 		<LogoStyled className={className}>
 			<h2>CRAZEE</h2>
 			<img
-				src="/public/images/logo-orange.png"
+				src={logo}
 				alt="logo crazee burger orange"
 			/>
 			<h2>BURGER</h2>
