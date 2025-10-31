@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 import logo from '../../assets/images/logo-orange.png';
 
-function Logo({ className }) {
+function Logo({ className, onClick }) {
 	return (
-		<LogoStyled className={className}>
+		<LogoStyled className={className} onClick={onClick} >
 			<h2>CRAZEE</h2>
 			<img
 				src={logo}
