@@ -1,7 +1,6 @@
 import LoginForm from "./LoginForm";
 import Logo from "../../shared/Logo";
 import styled from "styled-components";
-import backgroung from "/public/images/burger-background.jpg";
 
 function LoginPage() {
 	return (
@@ -21,7 +20,7 @@ const LoginPageStyled = styled.div`
   align-items: center;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${backgroung});
+    url("/images/burger-background.jpg");
   background-size: cover;
   background-position: center;
 

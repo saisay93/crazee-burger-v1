@@ -1,15 +1,35 @@
-import { useParams, Link } from "react-router-dom";
+import styled from "styled-components";
+import NavBar from "./NavBar/NavBar";
+import Main from "./Main/Main";
+import { theme } from "../../../theme/index";
+
 function OrderPage() {
-	const { username } = useParams();
+	
 
 	return (
-		<>
-			<h1>Bonjour {username}</h1>
-			<Link to="/">
-				<button type="button">Déconnexion</button>
-			</Link>
-		</>
+		<OrderPageStyled>
+			<div className="container">
+				<NavBar />
+				<Main />
+			</div>
+		</OrderPageStyled>
 	);
 }
 
 export default OrderPage;
+
+const OrderPageStyled = styled.div`
+  background-color: ${theme.colors.primary};
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 1400px;
+    height: 95vh;
+  }
+`;
