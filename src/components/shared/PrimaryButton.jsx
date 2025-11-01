@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-function PrimaryButton({ label, Icon }) {
+function PrimaryButton({ label, Icon, className }) {
 	return (
-		<PrimaryButtonStyled type="submit">
+		<PrimaryButtonStyled className={className} type="submit">
 			<span>{label}</span>
 			{Icon && Icon}
 		</PrimaryButtonStyled>
