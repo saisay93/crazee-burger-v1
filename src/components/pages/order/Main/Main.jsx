@@ -6,13 +6,7 @@ import Card from './Card';
 function Main() {
   return (
     <MainStyled>
-      <Card className="card"/>
-      <Card className="card"/>
-      <Card className="card"/>
-      <Card className="card"/>
-      <Card className="card"/>
-      <Card className="card"/>
-      
+      <Card />
     </MainStyled>
   )
 }
@@ -26,14 +20,9 @@ const MainStyled = styled.div`
   border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
   display: grid;
   grid-template: repeat(auto-fill, 330px) / repeat(4, 240px);
-  gap: 85px;
+  row-gap: 60px;
+  column-gap: 85px;
   justify-content: center;
   overflow: scroll;
   padding: 50px 0;
-
-  .card{
-    background-color: blueviolet;
-    width: 240px;
-    height: 330px;
-  }
 `;
