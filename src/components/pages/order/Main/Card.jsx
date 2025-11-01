@@ -1,6 +1,6 @@
-function Card() {
+function Card({className}) {
   return (
-    <div>Card</div>
+    <div className={className}>Card</div>
   )
 }
 
