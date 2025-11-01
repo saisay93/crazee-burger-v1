@@ -1,11 +1,13 @@
-import React from 'react'
 import styled from 'styled-components';
 import { theme } from "../../../../theme/index";
+import Card from './Card';
 
 
 function Main() {
   return (
-    <MainStyled />
+    <MainStyled>
+      <Card />
+    </MainStyled>
   )
 }
 
