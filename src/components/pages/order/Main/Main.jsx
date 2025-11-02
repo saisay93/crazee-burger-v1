@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../../../theme/index";
 import Card from "./Card";
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
+import { formattedPrice } from "../../../../utils/maths";
 
 function Main() {
 	return (
@@ -11,7 +12,7 @@ function Main() {
 					key={item.id}
 					imageSource={item.imageSource}
 					title={item.title}
-					price={item.price}
+					price={formattedPrice(item.price)}
 				/>
 			))}
 		</MainStyled>
