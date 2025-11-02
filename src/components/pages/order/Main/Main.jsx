@@ -1,17 +1,24 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { theme } from "../../../../theme/index";
-import Card from './Card';
-
+import Card from "./Card";
+import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 
 function Main() {
-  return (
-    <MainStyled>
-      <Card />
-    </MainStyled>
-  )
+	return (
+		<MainStyled>
+			{fakeMenu2.map((item) => (
+				<Card
+					key={item.id}
+					imageSource={item.imageSource}
+					title={item.title}
+					price={item.price}
+				/>
+			))}
+		</MainStyled>
+	);
 }
 
-export default Main
+export default Main;
 
 const MainStyled = styled.div`
   flex: 1;
