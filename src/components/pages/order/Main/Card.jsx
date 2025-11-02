@@ -2,26 +2,24 @@ import styled from "styled-components";
 import { theme } from "../../../../theme";
 import PrimaryButton from "../../../shared/PrimaryButton";
 
-function Card() {
+function Card({ imageSource, title, price }) {
 	return (
-		<Cardstyled>
+		<CardStyled>
 			<div className="image">
-				<img src="/src/assets/images/burger-bacon-egg.png" alt="" />
+				<img src={imageSource} alt={title} />
 			</div>
 			<div className="infos">
-				<div className="title">
-					<p>Burger Smoke BBQ</p>
-				</div>
-				<span className="price">5,60 €</span>
-				<PrimaryButton className="button" label="Ajouter"/>
+				<h3 className="title">{title}</h3>
+				<p className="price">{price}</p>
+				<PrimaryButton className="button" label="Ajouter" />
 			</div>
-		</Cardstyled>
+		</CardStyled>
 	);
 }
 
 export default Card;
 
-const Cardstyled = styled.div`
+const CardStyled = styled.div`
   background-color: white;
   width: 240px;
   height: 330px;
@@ -54,6 +52,9 @@ const Cardstyled = styled.div`
     font-family: "Amatic SC", cursive;
     font-size: ${theme.fonts.size.P4};
     font-weight: ${theme.fonts.weights.bold};
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .button {
