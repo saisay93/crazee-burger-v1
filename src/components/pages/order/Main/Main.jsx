@@ -6,7 +6,7 @@ import Basket from "./Basket";
 function Main() {
 	return (
 		<MainStyled>
-			<Basket />
+			{/* <Basket /> */}
 			<Menu />
 		</MainStyled>
 	);
@@ -20,6 +20,7 @@ const MainStyled = styled.div`
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 1fr; //  1fr for Menu only layout ---> Remove at Ticket F07
+  /* grid-template-columns: 25% 1fr; */  // For Basket and Menu layout ---> Ticket F07
   overflow: scroll;
 `;
