@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import { theme } from "../../../../theme";
-import PrimaryButton from "../../../shared/PrimaryButton";
+import { theme } from "../../theme";
+import PrimaryButton from "./PrimaryButton";
 
-function Card({ imageSource, title, price }) {
+function Card({ imageSource, bodyTitle, bodyInfo }) {
 	return (
 		<CardStyled>
-			<div className="image">
-				<img src={imageSource} alt={title} />
+			<div className="header">
+				<img src={imageSource} alt={bodyTitle} />
 			</div>
-			<div className="infos">
-				<h3 className="title">{title}</h3>
-				<p className="price">{price}</p>
-				<PrimaryButton className="button" label="Ajouter" />
+			<div className="body">
+				<h3 className="body-title">{bodyTitle}</h3>
+				<p className="body-info">{bodyInfo}</p>
+				<PrimaryButton className="primary-button" label="Ajouter" />
 			</div>
 		</CardStyled>
 	);
@@ -28,7 +28,7 @@ const CardStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  .image {
+  .header {
     padding: 50px 20px 15px;
 
     img {
@@ -38,7 +38,7 @@ const CardStyled = styled.div`
     }
   }
 
-  .infos {
+  .body {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     width: 200px;
@@ -46,7 +46,7 @@ const CardStyled = styled.div`
     margin: 0 auto 15px;
   }
 
-  .title {
+  .body-title {
     grid-area: 1 / 1 / 2 / 3;
     align-self: center;
     font-family: "Amatic SC", cursive;
@@ -57,7 +57,7 @@ const CardStyled = styled.div`
     white-space: nowrap;
   }
 
-  .button {
+  .primary-button {
     grid-area: 2 / 2 / 3 / 3;
     align-self: center;
     width: 95px;
@@ -65,7 +65,7 @@ const CardStyled = styled.div`
     font-size: ${theme.fonts.size.XS};
   }
 
-  .price {
+  .body-info {
     grid-area: 2 / 1 / 3 / 2;
     align-self: center;
     font-size: ${theme.fonts.size.P0};
