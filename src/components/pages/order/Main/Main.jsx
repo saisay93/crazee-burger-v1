@@ -1,20 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme/index";
-import Card from "./Card";
-import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
-import { formattedPrice } from "../../../../utils/maths";
+import Menu from "./Menu";
+import Basket from "./Basket";
 
 function Main() {
 	return (
 		<MainStyled>
-			{fakeMenu2.map((item) => (
-				<Card
-					key={item.id}
-					imageSource={item.imageSource}
-					title={item.title}
-					price={formattedPrice(item.price)}
-				/>
-			))}
+			{/* <Basket /> */}
+			<Menu />
 		</MainStyled>
 	);
 }
@@ -27,10 +20,7 @@ const MainStyled = styled.div`
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
   display: grid;
-  grid-template: repeat(auto-fill, 330px) / repeat(4, 240px);
-  row-gap: 60px;
-  column-gap: 85px;
-  justify-content: center;
+  grid-template-columns: 1fr; //  1fr for Menu only layout ---> Remove at Ticket F07
+  /* grid-template-columns: 25% 1fr; */  // For Basket and Menu layout ---> Ticket F07
   overflow: scroll;
-  padding: 50px 0;
 `;

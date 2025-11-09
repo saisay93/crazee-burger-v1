@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { theme } from "../../../../theme";
 import Profile from "./Profile";
+import ToggleButton from "../../../shared/ToggleButton";
+import { toast } from "react-toastify";
 
 function NavBarRightSide({ username }) {
+	const [isAdminMode, setIsAdminMode] = useState(false);
+
+	const handleAdminMode = () => {
+		setIsAdminMode(!isAdminMode);
+		if (!isAdminMode) {
+			notifyAdminOn();
+		}
+	};
+
+	const notifyAdminOn = () =>
+		toast.info("Mode admin activé", {
+			position: "bottom-right",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "dark",
+		});
+
 	return (
 		<NavBarRightSideStyled className="right-side">
-			<div className="admin-button">Admin Button</div>
+			<ToggleButton
+				isChecked={isAdminMode}
+				onToggle={handleAdminMode}
+				labelIfChecked="DESACTIVER LE MODE ADMIN"
+				labelIfUnchecked="ACTIVER LE MODE ADMIN"
+			/>
 			<Profile username={username} />
 		</NavBarRightSideStyled>
 	);
@@ -17,14 +44,4 @@ export default NavBarRightSide;
 const NavBarRightSideStyled = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  .admin-button {
-    border: 1px solid ${theme.colors.greyMedium};
-    width: 80px;
-    height: 50px;
-    display: none;
-    align-items: center;
-    text-align: center;
-  }
 `;

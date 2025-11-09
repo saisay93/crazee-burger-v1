@@ -27,6 +27,7 @@ const ProfileStyled = styled.div`
   align-items: center;
   min-width: 100px;
   gap: 10px;
+  margin-left: 50px;
 
   .info {
     p {
