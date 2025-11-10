@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import { theme } from "../../../../theme";
+import { theme } from "../../theme";
 
-function AdminPanelTab({ label, icon }) {
+function PanelTab({ label, icon }) {
 	return (
-		<AdminPanelTabstyled>
+		<Tabstyled>
 			{icon && icon}
 			{label}
-		</AdminPanelTabstyled>
+		</Tabstyled>
 	);
 }
 
-export default AdminPanelTab;
+export default PanelTab;
 
-const AdminPanelTabstyled = styled.div`
+const Tabstyled = styled.div`
   background: ${theme.colors.white};
   min-width: 60px;
   height: 43px;
