@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { theme } from "../../../../theme/index";
 import Menu from "./Menu";
 import Basket from "./Basket";
+import AdminPanel from "./AdminPanel";
 
 function Main() {
 	return (
 		<MainStyled>
 			{/* <Basket /> */}
 			<Menu />
+      <AdminPanel />
 		</MainStyled>
 	);
 }
@@ -23,4 +25,5 @@ const MainStyled = styled.div`
   grid-template-columns: 1fr; //  1fr for Menu only layout ---> Remove at Ticket F07
   /* grid-template-columns: 25% 1fr; */  // For Basket and Menu layout ---> Ticket F07
   overflow: scroll;
+  position: relative;
 `;
