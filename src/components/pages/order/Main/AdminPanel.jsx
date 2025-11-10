@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import PanelTab from "../../../shared/PanelTab";
-import { theme } from "../../../../theme";
 import { FiChevronDown } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
+import Panel from "./Panel";
 
 export default function AdminPanel() {
 	return (
 		<AdminPanelStyle>
-			<div className="container-tab">
+			<div div className="container-tab">
 				<PanelTab icon={<FiChevronDown />} />
 				<PanelTab
 					label="Ajouter un produit"
@@ -19,26 +19,19 @@ export default function AdminPanel() {
 					icon={<MdModeEditOutline className="icon-tab" />}
 				/>
 			</div>
+			<Panel />
 		</AdminPanelStyle>
 	);
 }
 
 const AdminPanelStyle = styled.div`
-  background: ${theme.colors.white};
-  width: 100%;
-  height: 25vh;
-  position: absolute;
-  bottom: 0;
   position: relative;
-  border-top: 1px solid ${theme.colors.greyLight};
-  box-shadow: ${theme.shadows.subtle};
-
-  .container-tab {
+  
+  .container-tab{display: flex;
+  margin-left: 70px;
+  width: fit-content;
   position: absolute;
-  top: -43px;
-  left: 70px;
-  display: flex;
-  flex-direction: row;
+  top: -42px;
   }
 
   .icon-tab{
@@ -46,5 +39,6 @@ const AdminPanelStyle = styled.div`
     height: 16px;
     margin-right: 13px;
   }
+
 
 `;
