@@ -8,7 +8,7 @@ import Panel from "./Panel";
 export default function AdminPanel() {
 	return (
 		<AdminPanelStyle>
-			<div div className="container-tab">
+			<div className="container-tab">
 				<PanelTab icon={<FiChevronDown />} />
 				<PanelTab
 					label="Ajouter un produit"
