@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-function Tab({ label, icon, onClick, className }) {
+function Tab({ label, Icon, onClick, className }) {
 	return (
 		<TabStyled onClick={onClick} className={className}>
-			{icon && icon}
+			{Icon}
 			{label && <span className="label">{label}</span>}
 		</TabStyled>
 	);
