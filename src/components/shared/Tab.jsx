@@ -1,33 +1,36 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-function PanelTab({ label, icon }) {
+function Tab({ label, icon, onClick, className }) {
 	return (
-		<Tabstyled>
+		<TabStyled onClick={onClick} className={className}>
 			{icon && icon}
-			{label}
-		</Tabstyled>
+			{label && <span className="label">{label}</span>}
+		</TabStyled>
 	);
 }
 
-export default PanelTab;
+export default Tab;
 
-const Tabstyled = styled.div`
+const TabStyled = styled.button`
   background: ${theme.colors.white};
-  min-width: 60px;
   height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+  top: 1px;
  
   border: 1px solid ${theme.colors.greyLight};
   border-bottom: 2px solid ${theme.colors.greyLight};
   border-radius: ${theme.borderRadius.round} ${theme.borderRadius.round} 0 0;
+  box-shadow: 0px -6px 8px -2px #0000001A;
+;
 
-  padding: 13px 22px;
-  margin-right: 1px;
+  padding: 0 22px;
+
   font-size: ${theme.fonts.size.P0};
-  
   color: ${theme.colors.greySemiDark};
   cursor: pointer;
   
@@ -35,5 +38,9 @@ const Tabstyled = styled.div`
     text-decoration: underline;
     border-bottom: 2px solid ${theme.colors.white};
 
+  }
+
+  .label{
+    margin-left: 13px;
   }
 `;

@@ -2,14 +2,17 @@ import styled from "styled-components";
 import { theme } from "../../../../theme/index";
 import Menu from "./Menu";
 import Basket from "./Basket";
-import AdminPanel from "./AdminPanel";
+import Admin from "./Admin";
+import PanelContext from "../../../../context/PanelContext";
+import { useContext } from "react";
 
 function Main() {
+  const {isAdminMode} = useContext(PanelContext)
 	return (
 		<MainStyled>
 			{/* <Basket /> */}
 			<Menu />
-      <AdminPanel />
+      {isAdminMode && <Admin />}
 		</MainStyled>
 	);
 }
@@ -25,5 +28,6 @@ const MainStyled = styled.div`
   grid-template-columns: 1fr; //  1fr for Menu only layout ---> Remove at Ticket F07
   /* grid-template-columns: 25% 1fr; */  // For Basket and Menu layout ---> Ticket F07
   overflow: scroll;
+  position: relative;
   
 `;

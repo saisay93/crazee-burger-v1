@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Profile from "./Profile";
 import ToggleButton from "../../../shared/ToggleButton";
 import { toast } from "react-toastify";
+import PanelContext from "../../../../context/PanelContext";
 
 function NavBarRightSide({ username }) {
-	const [isAdminMode, setIsAdminMode] = useState(false);
+	const {isAdminMode, setIsAdminMode} = useContext(PanelContext)
 
 	const handleAdminMode = () => {
 		setIsAdminMode(!isAdminMode);
