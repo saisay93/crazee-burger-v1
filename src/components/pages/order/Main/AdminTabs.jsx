@@ -1,15 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext  } from "react";
 import styled from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../theme";
-import Tab from "../../../shared/Tab.jsx"
+import Tab from "../../../shared/Tab.jsx";
 import PanelContext from "../../../../context/PanelContext";
 
 function AdminTabs() {
-
-    const {
+	const {
 		isTabOpened,
 		setIsTabOpened,
 		isAddTabSelected,
@@ -18,26 +17,23 @@ function AdminTabs() {
 		setIsEditTabSelected,
 	} = useContext(PanelContext);
 
-	const [label, setLabel] = useState(""); 
-
 	const handleAddTab = () => {
 		setIsAddTabSelected(true);
 		setIsEditTabSelected(false);
 		!isTabOpened && setIsTabOpened(!isTabOpened);
-		setLabel("Ajouter un produit");
 	};
 
-	const handleSelectedTab = () => {
+	const handleEditTab = () => {
 		setIsEditTabSelected(true);
 		setIsAddTabSelected(false);
 		!isTabOpened && setIsTabOpened(!isTabOpened);
-		setLabel("Modifier un produit");
+		
 	};
-    
+
 	return (
 		<AdminTabsStyled>
 			<Tab
-                label=""
+				label=""
 				icon={isTabOpened ? <FiChevronDown /> : <FiChevronUp />}
 				className={!isTabOpened && "tab--highlighted"}
 				onClick={() => setIsTabOpened(!isTabOpened)}
@@ -52,7 +48,7 @@ function AdminTabs() {
 				label="Modifier un produit"
 				icon={<MdModeEditOutline />}
 				className={isEditTabSelected && "tab--highlighted"}
-				onClick={handleSelectedTab}
+				onClick={handleEditTab}
 			/>
 		</AdminTabsStyled>
 	);

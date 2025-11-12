@@ -5,12 +5,12 @@ import PanelContext from "../../../../context/PanelContext";
 import AdminTabs from "./AdminTabs";
 
 export default function Admin() {
-	const { isTabOpened } = useContext(PanelContext);
+	const { isTabOpened, isAddTabSelected } = useContext(PanelContext);
 
 	return (
 		<AdminStyle>
 			<AdminTabs />
-			{isTabOpened && <AdminPanel label="" />}
+			{isTabOpened && <AdminPanel label={isAddTabSelected ? "Ajouter un produit" : "Modifier un produit"} />}
 		</AdminStyle>
 	);
 }
