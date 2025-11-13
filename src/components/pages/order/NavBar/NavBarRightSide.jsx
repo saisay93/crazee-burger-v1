@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Profile from "./Profile";
 import ToggleButton from "../../../shared/ToggleButton";
 import { toast } from "react-toastify";
-import PanelContext from "../../../../context/PanelContext";
+import OrderContext from "../../../../context/OrderContext";
 
 function NavBarRightSide({ username }) {
-	const {isAdminMode, setIsAdminMode} = useContext(PanelContext)
+	const { isAdminMode, setIsAdminMode } = useContext(OrderContext);
 
 	const handleAdminMode = () => {
 		setIsAdminMode(!isAdminMode);

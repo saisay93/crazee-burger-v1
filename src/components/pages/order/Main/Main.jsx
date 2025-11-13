@@ -3,16 +3,16 @@ import { theme } from "../../../../theme/index";
 import Menu from "./Menu";
 import Basket from "./Basket";
 import Admin from "./Admin";
-import PanelContext from "../../../../context/PanelContext";
+import OrderContext from "../../../../context/OrderContext";
 import { useContext } from "react";
 
 function Main() {
-  const {isAdminMode} = useContext(PanelContext)
+	const { isAdminMode } = useContext(OrderContext);
 	return (
 		<MainStyled>
 			{/* <Basket /> */}
 			<Menu />
-      {isAdminMode && <Admin />}
+			{isAdminMode && <Admin />}
 		</MainStyled>
 	);
 }

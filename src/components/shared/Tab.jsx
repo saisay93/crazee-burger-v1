@@ -37,7 +37,6 @@ const TabStyled = styled.button`
   &:hover {
     text-decoration: underline;
     border-bottom: 2px solid ${theme.colors.white};
-
   }
 
   .label{

@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import AdminPanel from "./AdminPanel";
 import { useContext } from "react";
-import PanelContext from "../../../../context/PanelContext";
-import AdminTabs from "./AdminTabs";
+import OrderContext from "../../../../context/OrderContext";
+import { AdminTabs, tabsConfig } from "./AdminTabs";
 
 export default function Admin() {
-	const { isTabOpened, isAddTabSelected } = useContext(PanelContext);
+	const { isTabOpened, currentTabSelected } = useContext(OrderContext);
 
 	return (
 		<AdminStyle>
 			<AdminTabs />
-			{isTabOpened && <AdminPanel label={isAddTabSelected ? "Ajouter un produit" : "Modifier un produit"} />}
+			{isTabOpened && (
+				<AdminPanel
+					label={tabsConfig.find((tab) => tab.id === currentTabSelected)?.label}
+				/>
+			)}
 		</AdminStyle>
 	);
 }
