@@ -22,7 +22,7 @@ const PrimaryButtonStyled = styled.button`
   padding: 18px 24px;
   border: 1px solid ${theme.colors.primary};
   color: ${theme.colors.white};
-  font-size: ${theme.fonts.size.P0};
+  font-size: ${theme.fonts.size.SM};
   font-weight: ${theme.fonts.weights.bold};
 
   &:hover {
