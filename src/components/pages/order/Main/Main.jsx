@@ -22,7 +22,7 @@ export default Main;
 const MainStyled = styled.div`
   flex: 1;
   background: ${theme.colors.white};
-  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: ${theme.shadows.strong};
   border-radius: 0 0 ${theme.borderRadius.extraRound} ${theme.borderRadius.extraRound};
   display: grid;
   grid-template-columns: 1fr; //  1fr for Menu only layout ---> Remove at Ticket F07
