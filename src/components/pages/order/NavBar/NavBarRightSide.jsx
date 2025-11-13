@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Profile from "./Profile";
 import ToggleButton from "../../../shared/ToggleButton";
 import { toast } from "react-toastify";
+import OrderContext from "../../../../context/OrderContext";
 
-function NavBarRightSide({ username }) {
-	const [isAdminMode, setIsAdminMode] = useState(false);
+function NavBarRightSide() {
+	const { isAdminMode, setIsAdminMode } = useContext(OrderContext);
 
 	const handleAdminMode = () => {
 		setIsAdminMode(!isAdminMode);
@@ -34,7 +35,7 @@ function NavBarRightSide({ username }) {
 				labelIfChecked="DESACTIVER LE MODE ADMIN"
 				labelIfUnchecked="ACTIVER LE MODE ADMIN"
 			/>
-			<Profile username={username} />
+			<Profile />
 		</NavBarRightSideStyled>
 	);
 }

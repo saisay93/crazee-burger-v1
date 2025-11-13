@@ -24,7 +24,7 @@ const CardStyled = styled.div`
   width: 240px;
   height: 330px;
   border-radius: ${theme.borderRadius.extraRound};
-  box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+  box-shadow: ${theme.shadows.medium};
   display: flex;
   flex-direction: column;
 

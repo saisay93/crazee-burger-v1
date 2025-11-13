@@ -2,17 +2,32 @@ import styled from "styled-components";
 import NavBar from "./NavBar/NavBar";
 import Main from "./Main/Main";
 import { theme } from "../../../theme/index";
+import OrderContext from "../../../context/OrderContext";
+import { useState } from "react";
 
 function OrderPage() {
-	
+	const [isAdminMode, setIsAdminMode] = useState(false);
+	const [isTabOpened, setIsTabOpened] = useState(true);
+	const [currentTabSelected, setCurrentTabSelected] = useState("Add");
+
+	const PanelContextValue = {
+		isAdminMode,
+		setIsAdminMode,
+		isTabOpened,
+		setIsTabOpened,
+		currentTabSelected,
+		setCurrentTabSelected,
+	};
 
 	return (
-		<OrderPageStyled>
-			<div className="container">
-				<NavBar />
-				<Main />
-			</div>
-		</OrderPageStyled>
+		<OrderContext value={PanelContextValue}>
+			<OrderPageStyled>
+				<div className="container">
+					<NavBar />
+					<Main />
+				</div>
+			</OrderPageStyled>
+		</OrderContext>
 	);
 }
 
