@@ -5,7 +5,7 @@ import ToggleButton from "../../../shared/ToggleButton";
 import { toast } from "react-toastify";
 import OrderContext from "../../../../context/OrderContext";
 
-function NavBarRightSide({ username }) {
+function NavBarRightSide() {
 	const { isAdminMode, setIsAdminMode } = useContext(OrderContext);
 
 	const handleAdminMode = () => {
@@ -35,7 +35,7 @@ function NavBarRightSide({ username }) {
 				labelIfChecked="DESACTIVER LE MODE ADMIN"
 				labelIfUnchecked="ACTIVER LE MODE ADMIN"
 			/>
-			<Profile username={username} />
+			<Profile />
 		</NavBarRightSideStyled>
 	);
 }

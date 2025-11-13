@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import { BsPersonCircle } from "react-icons/bs";
 
-function Profile({ username }) {
+function Profile() {
+  const {username} = useParams()
+
 	return (
 		<ProfileStyled>
 			<div className="info">
